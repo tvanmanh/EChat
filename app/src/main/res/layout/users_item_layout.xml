@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/itembackground"
+    android:background="#d97575">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/users_item_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/users_item_name"
+        android:src="@drawable/user_icon" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/online_ic"
+        android:layout_width="32dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="14dp"
+        android:background="@null"
+        android:src="@drawable/online_icon" />
+    <TextView
+        android:id="@+id/users_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/users_item_image"
+        android:layout_toRightOf="@+id/users_item_image"
+        android:text="default name"
+        android:textColor="#151414"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/users_item_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/users_item_name"
+        android:layout_alignStart="@+id/users_item_name"
+        android:layout_below="@+id/users_item_name"
+        android:layout_marginTop="11dp"
+        android:text=""
+        android:textColor="#050b76" />
+</RelativeLayout>

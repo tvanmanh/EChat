@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "646647000711",
+    "firebase_url": "https://echat-d8585.firebaseio.com",
+    "project_id": "echat-d8585",
+    "storage_bucket": "echat-d8585.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646647000711:android:69124f69905b7d8d",
+        "android_client_info": {
+          "package_name": "com.project.tranvanmanh.e_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646647000711-5dl5a06im236in37vt75cvm09f3ht3ff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.tranvanmanh.e_chat",
+            "certificate_hash": "c085aa305e901f382138258d7b521a0bbcb67dc0"
+          }
+        },
+        {
+          "client_id": "646647000711-1rvvsi3ivb9app4arrq32knkbnuq5eal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLrMjlmv9_U0OtwAjTlHzYhBBsinHKfBI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646647000711-1rvvsi3ivb9app4arrq32knkbnuq5eal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

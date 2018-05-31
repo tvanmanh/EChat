@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+<LinearLayout
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/manage_imvusericon"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        civ_border_width="2dp"
+        civ_border_color="#faf8f8"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/user_icon"/>
+    <TextView
+        android:id="@+id/manage_tvname"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:layout_marginTop="5dp"
+        android:text="John cal"
+        android:layout_gravity="center"
+        android:textColor="#faf7f7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+</LinearLayout>
+    <ImageView
+        android:id="@+id/manage_imvjob"
+        android:background="@null"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/saying" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#1e1d1d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/manage_imvjob"
+        android:layout_toRightOf="@+id/manage_imvjob"
+        android:text="life is beatiful!"
+        android:id="@+id/manage_tvsaying" />
+
+    <ImageView
+        android:src="@drawable/cup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/manage_imvjob"
+        android:layout_alignStart="@+id/manage_imvjob"
+        android:layout_below="@+id/manage_imvjob"
+        android:layout_marginTop="18dp"
+        android:id="@+id/manage_imvcup" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#1e1d1d"
+        android:id="@+id/manage_tvachivement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/manage_tvsaying"
+        android:layout_alignStart="@+id/manage_tvsaying"
+        android:layout_alignTop="@+id/manage_imvcup"
+        android:text="My achivement" />
+
+    <ImageView
+        android:id="@+id/manage_imvcareer"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/manage_imvcup"
+        android:layout_alignStart="@+id/manage_imvcup"
+        android:layout_below="@+id/manage_imvcup"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/career_icon" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#1e1d1d"
+        android:id="@+id/manage_tvcareer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/manage_tvachivement"
+        android:layout_alignStart="@+id/manage_tvachivement"
+        android:layout_alignTop="@+id/manage_imvcareer"
+        android:text="My career" />
+
+    <ImageView
+        android:id="@+id/manage_imvschool"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/manage_imvcareer"
+        android:layout_alignStart="@+id/manage_imvcareer"
+        android:layout_below="@+id/manage_imvcareer"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/student" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#1e1d1d"
+        android:id="@+id/manage_tvschool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/manage_tvcareer"
+        android:layout_alignStart="@+id/manage_tvcareer"
+        android:layout_alignTop="@+id/manage_imvschool"
+        android:text="My school" />
+
+    <ImageView
+        android:id="@+id/manage_imvlocation"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/manage_imvschool"
+        android:layout_alignStart="@+id/manage_imvschool"
+        android:layout_below="@+id/manage_imvschool"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/home" />
+
+    <TextView
+        android:textSize="16dp"
+        android:textColor="#1e1d1d"
+        android:id="@+id/manage_tvlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/manage_tvschool"
+        android:layout_alignStart="@+id/manage_tvschool"
+        android:layout_alignTop="@+id/manage_imvlocation"
+        android:text="My home address" />
+
+    <TextView
+        android:id="@+id/manage_tvchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manage_imvlocation"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/manage_tvachivement"
+        android:layout_toRightOf="@+id/manage_tvachivement"
+        android:text="change your profile"
+        android:textColor="#0d36d9"
+        android:textSize="20dp" />
+</RelativeLayout>

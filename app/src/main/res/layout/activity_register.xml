@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<include layout="@layout/main_bar_layout" android:id="@+id/reg_toobar"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#ba0202"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Register Form"
+        android:textSize="30dp" />
+
+    <EditText
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/reg_edtusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Username"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/reg_edtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Email"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/reg_edtpassword"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/reg_edtconfirmpass"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Confirm password"
+        android:textSize="25dp" />
+    <Button
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:textColor="#f9f6f6"
+        android:textStyle="bold"
+        android:background="#f79d3d"
+        android:id="@+id/reg_btnsubmit"
+        android:layout_marginTop="16dp"
+        android:text="submit Acount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

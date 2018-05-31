@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#fffffb">
+
+    <ImageView
+        android:background="@null"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/welcomeicon" />
+
+    <TextView
+        android:textColor="#f7c38c"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Fe-Chat"
+        android:textSize="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:textStyle="bold"
+        android:textColor="#f7f3f3"
+        android:background="#f79d3d"
+        android:id="@+id/start_btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="login " />
+
+    <Button
+        android:textStyle="bold"
+        android:textColor="#f5f3f3"
+        android:background="#830513"
+        android:id="@+id/start_btnReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Register new acount" />
+</LinearLayout>

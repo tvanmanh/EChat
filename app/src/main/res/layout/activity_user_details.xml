@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7a277"
+    >
+    <LinearLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d97575"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/detail_imvimage"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            civ_border_width="2dp"
+            civ_border_color="#faf8f8"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/user_icon"/>
+        <TextView
+            android:id="@+id/detail_tvname"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:layout_marginTop="5dp"
+            android:text="John cal"
+            android:layout_gravity="center"
+            android:textColor="#faf7f7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#03605d"
+        android:id="@+id/detail_status"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/background"
+        android:layout_marginTop="33dp"
+        android:text="My status" />
+
+    <TextView
+        android:textColor="#03605d"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/detail_status"
+        android:text="My Job"
+        android:id="@+id/detail_tvjob" />
+
+    <TextView
+        android:textColor="#03605d"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/detail_tvjob"
+        android:text="My school"
+        android:id="@+id/detail_tvschool" />
+
+    <TextView
+        android:textColor="#03605d"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/detail_tvschool"
+        android:text="Mutual friends"
+        android:id="@+id/detail_tvmutualfriend" />
+
+    <Button
+        android:id="@+id/detail_btnAddfriend"
+        android:drawableLeft="@android:drawable/ic_input_add"
+        android:textColor="#0519ab"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="#2f8305"
+        android:text="Add Friend"
+        android:textAllCaps="false"
+        android:textSize="20dp" />
+
+    <Button
+        android:enabled="false"
+        android:id="@+id/detail_btnDecline"
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#0519ab"
+        android:text="Decline The Request"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/detail_btnAddfriend"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:background="#df5819" />
+</RelativeLayout>
