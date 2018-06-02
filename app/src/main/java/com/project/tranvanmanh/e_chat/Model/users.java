@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Model;
 
 /**
  * Created by tranvanmanh on 4/30/2018.

@@ -1,9 +1,10 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.project.tranvanmanh.e_chat.R;
 import com.squareup.picasso.Picasso;
 
 public class DisplayImageActivity extends AppCompatActivity {

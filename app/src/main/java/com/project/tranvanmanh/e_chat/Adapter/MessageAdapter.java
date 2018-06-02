@@ -1,9 +1,7 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,15 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import com.google.android.gms.common.api.Api;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.project.tranvanmanh.e_chat.Activity.DisplayImageActivity;
+import com.project.tranvanmanh.e_chat.Model.Message;
+import com.project.tranvanmanh.e_chat.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

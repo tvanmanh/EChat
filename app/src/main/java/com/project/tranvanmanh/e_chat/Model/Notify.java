@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Model;
 
 public class Notify {
 

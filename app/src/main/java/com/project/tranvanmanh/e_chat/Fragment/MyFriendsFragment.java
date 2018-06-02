@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseIndexRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +24,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.project.tranvanmanh.e_chat.Activity.ChatActivity;
+import com.project.tranvanmanh.e_chat.Model.Friends;
+import com.project.tranvanmanh.e_chat.R;
+import com.project.tranvanmanh.e_chat.Activity.UserDetailsActivity;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;

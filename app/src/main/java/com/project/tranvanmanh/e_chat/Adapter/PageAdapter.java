@@ -1,9 +1,13 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.project.tranvanmanh.e_chat.Fragment.MyFriendsFragment;
+import com.project.tranvanmanh.e_chat.Fragment.MyMesssagesFragment;
+import com.project.tranvanmanh.e_chat.Fragment.MyRequestsFragment;
 
 /**
  * Created by tranvanmanh on 4/26/2018.

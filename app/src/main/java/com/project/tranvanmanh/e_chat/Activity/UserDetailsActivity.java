@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Activity;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -19,11 +18,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.project.tranvanmanh.e_chat.R;
+import com.project.tranvanmanh.e_chat.UserProfile;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.UserDataHandler;
-
-import java.security.PrivateKey;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;

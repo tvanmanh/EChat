@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -31,9 +31,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.project.tranvanmanh.e_chat.Model.Message;
+import com.project.tranvanmanh.e_chat.Adapter.MessageAdapter;
+import com.project.tranvanmanh.e_chat.R;
+import com.project.tranvanmanh.e_chat.TimeAgo;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;

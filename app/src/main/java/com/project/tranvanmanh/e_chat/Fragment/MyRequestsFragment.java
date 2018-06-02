@@ -1,4 +1,4 @@
-package com.project.tranvanmanh.e_chat;
+package com.project.tranvanmanh.e_chat.Fragment;
 
         import android.content.Intent;
         import android.graphics.Color;
@@ -25,6 +25,11 @@ package com.project.tranvanmanh.e_chat;
         import com.google.firebase.database.DatabaseReference;
         import com.google.firebase.database.FirebaseDatabase;
         import com.google.firebase.database.ValueEventListener;
+        import com.project.tranvanmanh.e_chat.MediaSound;
+        import com.project.tranvanmanh.e_chat.Model.Notify;
+        import com.project.tranvanmanh.e_chat.R;
+        import com.project.tranvanmanh.e_chat.Model.Request;
+        import com.project.tranvanmanh.e_chat.Activity.UserDetailsActivity;
         import com.squareup.picasso.Picasso;
 
         import de.hdodenhof.circleimageview.CircleImageView;
