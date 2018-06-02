@@ -71,14 +71,14 @@ public class MyMesssagesFragment extends Fragment {
                         mRequestDatabase
                 ) {
             @Override
-            protected void populateViewHolder(final ViewHolder viewHolder, Chat model, int position) {
+            protected void populateViewHolder(final ViewHolder viewHolder, final Chat model, int position) {
                 friend_id = getRef(position).getKey();
-                Long time = model.getTime();
-                String timeAgo = TimeAgo.getTimeAgo(time);
-                viewHolder.setDate(timeAgo);
                 mUserDatabase.child(friend_id).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+                        Long time = model.getTime();
+                        String timeAgo = TimeAgo.getTimeAgo(time);
+                        viewHolder.setDate(timeAgo);
                             final String name = dataSnapshot.child("name").getValue().toString();
                             Log.e("name", name );
                             viewHolder.setName(name);

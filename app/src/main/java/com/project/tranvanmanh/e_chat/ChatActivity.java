@@ -52,7 +52,6 @@ public class ChatActivity extends AppCompatActivity {
     private TextView tvTimeOffline;
     private CircleImageView mBarCirclerImageView;
 
-    private String thumb_my_image;
 
     private String friend_id;
     private String myUser_id;
@@ -90,23 +89,13 @@ public class ChatActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         friend_id = bundle.getString("user_id");
         String name = bundle.getString("name");
-        String thumb_image = bundle.getString("thumb_image");
+        final String thumb_image = bundle.getString("thumb_image");
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.keepSynced(true);
         mAuth = FirebaseAuth.getInstance();
         myUser_id = mAuth.getCurrentUser().getUid();
 
-        mDatabase.child("users").child(myUser_id).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                thumb_my_image = dataSnapshot.child("thumb_image").getValue().toString();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
         mToolbar = (Toolbar) findViewById(R.id.chat_bar);
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -129,7 +118,7 @@ public class ChatActivity extends AppCompatActivity {
         mLinearLayout = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLinearLayout);
         messages = new ArrayList<>();
-        adapter = new MessageAdapter(messages, myUser_id, thumb_image, thumb_my_image);
+        adapter = new MessageAdapter(messages, myUser_id, thumb_image, mDatabase);
         mRecyclerView.setAdapter(adapter);
         loadMessage();
 
@@ -137,6 +126,7 @@ public class ChatActivity extends AppCompatActivity {
 
         tvName.setText(name);
         Picasso.with(this).load(thumb_image).placeholder(R.drawable.user_icon).into(mBarCirclerImageView);
+
         mDatabase.child("users").child(friend_id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -192,6 +182,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMessage();
+                edtContent.setText("");
             }
         });
 
@@ -233,7 +224,6 @@ public class ChatActivity extends AppCompatActivity {
             Map addMessage = new HashMap();
             addMessage.put("message/" + myUser_id + "/" + friend_id +"/" + push_id, messageMap);
             addMessage.put("message/" + friend_id + "/" + myUser_id + "/" + push_id, messageMap);
-
 
             mDatabase.updateChildren(addMessage, new DatabaseReference.CompletionListener() {
                 @Override
@@ -320,7 +310,6 @@ public class ChatActivity extends AppCompatActivity {
                 if(dataSnapshot != null){
                     Message message = dataSnapshot.getValue(Message.class);
                     itemPos++;
-
                     if(itemPos == 1){
 
                         String messageKey = dataSnapshot.getKey();
@@ -355,6 +344,12 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mDatabase.child("chat").child(myUser_id).child(friend_id).child("time").setValue(ServerValue.TIMESTAMP);
     }
 
     @Override

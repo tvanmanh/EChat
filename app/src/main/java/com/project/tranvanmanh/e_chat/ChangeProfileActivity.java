@@ -51,6 +51,7 @@ public class ChangeProfileActivity extends AppCompatActivity {
     private EditText edtHomeAddress;
     private Button btnSaveChanges;
     private TextView tvChangeAvatar;
+    private TextView tvChangeName;
 
     private StorageReference mstorageReference;
     private DatabaseReference mDatabase;
@@ -76,6 +77,8 @@ public class ChangeProfileActivity extends AppCompatActivity {
             edtSchool.setText(user.getSchool());
             edtHomeAddress.setText(user.getHome_address());
         }
+        Picasso.with(this).load(user.getImage()).placeholder(R.drawable.user_icon).into(circleImageView);
+        tvChangeName.setText(user.getName());
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         String uId = mUser.getUid();
@@ -126,7 +129,6 @@ public class ChangeProfileActivity extends AppCompatActivity {
     private void initView(){
 
         circleImageView = (CircleImageView) findViewById(R.id.manage_imvusericon);
-
         edtStatus = (EditText) findViewById(R.id.change_tvsaying);
         edtAchivement = (EditText) findViewById(R.id.change_tvachivement);
         edtCareer = (EditText) findViewById(R.id.change_tvcareer);
@@ -134,6 +136,8 @@ public class ChangeProfileActivity extends AppCompatActivity {
         edtHomeAddress = (EditText) findViewById(R.id.change_tvlocation);
         btnSaveChanges = (Button) findViewById(R.id.change_btnchange);
         tvChangeAvatar = (TextView) findViewById(R.id.change_tvchangeavatar);
+        tvChangeName = (TextView) findViewById(R.id.change_tvname);
+
     }
 
     @Override

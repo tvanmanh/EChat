@@ -155,8 +155,8 @@ public class UserDetailsActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         HashMap<String, String> infoNo = new HashMap<>();
-                                        infoNo.put("from: ", myUser.getUid());
-                                        infoNo.put("type: ", "request");
+                                        infoNo.put("from", myUser.getUid());
+                                        infoNo.put("type", "request");
                                         mDatabaseNotification.child(uid).push().setValue(infoNo).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {

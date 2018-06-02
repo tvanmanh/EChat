@@ -1,9 +1,11 @@
 package com.project.tranvanmanh.e_chat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,11 @@ import android.widget.VideoView;
 
 import com.google.android.gms.common.api.Api;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -27,11 +34,22 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     private String thumb_friend_image;
     private String thumb_my_image;
 
-    public MessageAdapter(ArrayList<Message> messages, String myUser_id, String thumb_friend_image, String thumb_my_image) {
+    public MessageAdapter(ArrayList<Message> messages, String myUser_id, String thumb_friend_image, DatabaseReference mDatabase) {
         this.messages = messages;
         this.mMyUser_id = myUser_id;
         this.thumb_friend_image = thumb_friend_image;
-        this.thumb_my_image = thumb_my_image;
+        mDatabase.child("users").child(myUser_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                thumb_my_image = dataSnapshot.child("thumb_image").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        Log.e("thumb_friend", thumb_friend_image );
     }
 
     @Override
@@ -54,10 +72,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
             holder.tvDisplayMessageM.setVisibility(View.VISIBLE);
             holder.imvAddImageM.setVisibility(View.VISIBLE);
-            holder.crlMessageM.setVisibility(View.VISIBLE);
+            holder.crlMessageM.setVisibility(View.GONE);
 
-            holder.tvDisplayMessage.setTextColor(Color.WHITE);
-            holder.tvDisplayMessage.setBackgroundResource(R.drawable.shape_friend_message);
+            holder.tvDisplayMessageM.setTextColor(Color.WHITE);
+            holder.tvDisplayMessageM.setBackgroundResource(R.drawable.shape_message);
             Picasso.with(holder.itemView.getContext()).load(thumb_my_image).placeholder(R.drawable.user_icon).into(holder.crlMessageM);
 
             if((message.getType()).equals("text")) {
@@ -73,16 +91,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 holder.imvAddImageM.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Picasso.with(holder.itemView.getContext()).load(message.getMessage()).placeholder(R.drawable.loadingimage_ic)
-                                .into(holder.imvAddImageM);
+                        Intent iDisplayImage = new Intent(holder.itemView.getContext(), DisplayImageActivity.class);
+                        iDisplayImage.putExtra("image", message.getMessage());
+                        holder.itemView.getContext().startActivity(iDisplayImage);
                     }
                 });
             }
         }else {
-            holder.tvDisplayMessage.setTextColor(Color.BLACK);
-            holder.tvDisplayMessage.setBackgroundResource(R.drawable.shape_message);
-            Picasso.with(holder.itemView.getContext()).load(thumb_friend_image).placeholder(R.drawable.user_icon).into(holder.crlMessage);
-
             holder.tvDisplayMessage.setVisibility(View.VISIBLE);
             holder.imvAddImage.setVisibility(View.VISIBLE);
             holder.crlMessage.setVisibility(View.VISIBLE);
@@ -90,6 +105,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             holder.tvDisplayMessageM.setVisibility(View.GONE);
             holder.imvAddImageM.setVisibility(View.GONE);
             holder.crlMessageM.setVisibility(View.GONE);
+
+            holder.tvDisplayMessage.setTextColor(Color.BLACK);
+            holder.tvDisplayMessage.setBackgroundResource(R.drawable.shape_friend_message);
+            Picasso.with(holder.itemView.getContext()).load(thumb_friend_image).placeholder(R.drawable.user_icon).into(holder.crlMessage);
 
             if((message.getType()).equals("text")) {
                 holder.tvDisplayMessage.setText(message.getMessage());
@@ -104,8 +123,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 holder.imvAddImage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Picasso.with(holder.itemView.getContext()).load(message.getMessage()).placeholder(R.drawable.loadingimage_ic)
-                                .into(holder.imvAddImage);
+                        Intent iDisplayImage = new Intent(holder.itemView.getContext(), DisplayImageActivity.class);
+                        iDisplayImage.putExtra("image", message.getMessage());
+                        holder.itemView.getContext().startActivity(iDisplayImage);
                     }
                 });
             }

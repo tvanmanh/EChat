@@ -1,6 +1,7 @@
 package com.project.tranvanmanh.e_chat;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class ManageProfileActivity extends AppCompatActivity {
     private TextView tvAchivement;
     private TextView tvHomeAddress;
     private TextView tvchange;
+    private UserProfile user;
 
     private DatabaseReference mDatabase;
     private FirebaseUser mUser;
@@ -51,7 +53,7 @@ public class ManageProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    final UserProfile user = dataSnapshot.getValue(UserProfile.class);
+                    user = dataSnapshot.getValue(UserProfile.class);
                     tvName.setText(user.getName());
                     tvStatus.setText(user.getStatus());
                     tvAchivement.setText(user.getAchivement());
@@ -88,12 +90,6 @@ public class ManageProfileActivity extends AppCompatActivity {
         tvchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserProfile user = new UserProfile();
-                user.setStatus(tvStatus.getText().toString());
-                user.setAchivement(tvAchivement.getText().toString());
-                user.setCareer(tvCareer.getText().toString());
-                user.setSchool(tvSchool.getText().toString());
-                user.setHome_address(tvHomeAddress.getText().toString());
                 Intent iChange = new Intent(ManageProfileActivity.this, ChangeProfileActivity.class);
                 iChange.putExtra("data", Parcels.wrap(user));
                 startActivity(iChange);

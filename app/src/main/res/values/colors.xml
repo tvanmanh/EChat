@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fcb870</color>
-    <color name="colorPrimaryDark">#f7c38c</color>
+    <color name="colorPrimary">#105bdc</color>
+    <color name="colorPrimaryDark">#22298b</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#fdfcfc</color>
     <color name="chat_background">#d6cdcd</color>
